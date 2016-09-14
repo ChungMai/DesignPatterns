@@ -82,8 +82,112 @@ class ThounsandExpress : Expression{
     override func nine() -> String {
         return " "
     }
+    
+    override func multiplier() -> Int {
+        return 1000
+    }
 }
 
 class HundredExpress : Expression{
+    override func one() -> String {
+        return "C"
+    }
     
+    override func four() -> String {
+        return "CD"
+    }
+    
+    override func five() -> String {
+        return "D"
+    }
+    
+    override func nine() -> String {
+        return "CM"
+    }
+    
+    override func multiplier() -> Int {
+        return 100
+    }
 }
+
+class TenExpress : Expression{
+    override func one() -> String {
+        return "X"
+    }
+    
+    override func four() -> String {
+        return "CL"
+    }
+    
+    override func five() -> String {
+        return "L"
+    }
+    
+    override func nine() -> String {
+        return "XC"
+    }
+    
+    override func multiplier() -> Int {
+        return 10
+    }
+}
+
+class OneExpress : Expression{
+    override func one() -> String {
+        return "I"
+    }
+    
+    override func four() -> String {
+        return "IV"
+    }
+    
+    override func five() -> String {
+        return "V"
+    }
+    
+    override func nine() -> String {
+        return "IX"
+    }
+    
+    override func multiplier() -> Int {
+        return 1
+    }
+}
+
+class RomanToDecimalConverter{
+    static let pattern = "^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$"
+    let validation = NSPredicate(format : "SELF MATCHES %@", pattern)
+    var tree : [Expression] = [ThounsandExpress(), HundredExpress(), TenExpress(), OneExpress()]
+    
+    func calculate(romanString : String) throws -> Int {
+        guard validate(romanString) else {
+            throw FormatError.RomanNumberFormatError}
+        let context = Context(input : romanString)
+        for t in tree{
+            t.interpret(context)
+        }
+        
+        return context.output
+    }
+    
+    func validate(romanString : String) -> Bool{
+        return validation.evaluateWithObject(romanString)
+    }
+}
+
+enum FormatError : ErrorType{
+    case RomanNumberFormatError
+}
+
+let romanNumberToTest = ["DC", "MCCMXXVIII","MCMXXVIII"]
+var converter = RomanToDecimalConverter()
+for roman in romanNumberToTest {
+    var decimal = try? converter.calculate(roman)
+    guard (decimal != nil) else {
+        print("\(roman) is not a correct roman number")
+        continue
+    }
+    print(decimal!)
+}
+
+
