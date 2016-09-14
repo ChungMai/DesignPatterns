@@ -64,11 +64,11 @@ var user2 = User(name:"Helmi")
 var user3 = User(name:"Adrien")
 var user4 = User(name:"Raphael")
 
+
 var mediator1 = Mediator()
 mediator1.register(user1)
 mediator1.register(user2)
 mediator1.register(user3)
-
 user1.sendMessage(mediator1, message: "This is message from \(user1.name)")
 
 
