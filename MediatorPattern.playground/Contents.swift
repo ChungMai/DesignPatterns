@@ -37,7 +37,7 @@ class Mediator : MediatorProtocol{
     var users:[UserProtocol]? = [User]()
     
     func broadcastMessage(sender: UserProtocol, message: AnyObject) {
-        dispatch_barrier_sync(self.queue, {
+        dispatch_barrier_async(self.queue, {
             () in
             guard let users = self.users else{
                 return
@@ -52,7 +52,7 @@ class Mediator : MediatorProtocol{
     }
     
     func register(user : UserProtocol) {
-        dispatch_barrier_sync(self.queue, {
+        dispatch_barrier_async(self.queue, {
             () in
             self.users?.append(user)
         })
@@ -76,3 +76,6 @@ var mediator2 = Mediator()
 mediator2.register(user2)
 mediator2.register(user4)
 user2.sendMessage(mediator2, message: "This is message from \(user2.name)")
+
+//dispatch_async: not block UI but dispatch_sync is block
+
