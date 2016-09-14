@@ -6,7 +6,7 @@ protocol UserProtocol {
     func update(object: AnyObject)
 }
 
-class User : UserProtocol{
+class User: UserProtocol,Equatable{
     let name : String!
     
     init(name:String){
@@ -17,6 +17,12 @@ class User : UserProtocol{
         let info = object as! Info
         print("\(self.name) notified that \(info.message) have status \(info.status) on \(info.date.description)")
     }
+    
+   
+}
+
+func ==(lhs: User, rhs: User) -> Bool{
+    return lhs.name == rhs.name
 }
 
 class Info{
@@ -52,9 +58,7 @@ class Room : RoomProtocol{
     }
     
     func removeObserver(user: User) {
-        
-        var index = users.indexOf({$0 == user})
-        
+        users.removeObject(user)
         let info = Info(msg: "\(user.name)", status: .Leave)
         notifyObserver(info)
     }
@@ -75,3 +79,14 @@ extension Array where Element: Equatable {
         }
     }
 }
+
+let room = Room()
+let user1 = User(name:"Julien")
+let user2 = User(name:"Alain")
+let user3 = User(name:"Helmi")
+let user4 = User(name:"Raphael")
+
+room.addObserver(user1)
+room.removeObserver(user2)
+
+
