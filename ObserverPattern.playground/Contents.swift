@@ -30,7 +30,7 @@ class Info{
     var message : String!
     var status : InfoStatus!
     
-    init(msg : String, status : InfoStatus){
+    init(msg : String!, status : InfoStatus){
         self.message = msg
         self.status = status
     }
@@ -58,9 +58,16 @@ class Room : RoomProtocol{
     }
     
     func removeObserver(user: User) {
-        users.removeObject(user)
-        let info = Info(msg: "\(user.name)", status: .Leave)
-        notifyObserver(info)
+
+        if users.contains(user){
+            let info = Info(msg: "\(user.name)", status: .Leave)
+            notifyObserver(info)
+            users.removeObject(user)
+        }
+        else{
+            print("\(user.name) is not join the room")
+        }
+        
     }
     
     func notifyObserver(object: AnyObject) {
@@ -78,6 +85,7 @@ extension Array where Element: Equatable {
             self.removeAtIndex(index)
         }
     }
+
 }
 
 let room = Room()
@@ -87,6 +95,8 @@ let user3 = User(name:"Helmi")
 let user4 = User(name:"Raphael")
 
 room.addObserver(user1)
+room.removeObserver(user1)
+room.removeObserver(user1)
 room.removeObserver(user2)
 
 
