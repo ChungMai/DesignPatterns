@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F4F6B6971D8D34690063A1A3"
-               BuildableName = "FlyweighPattern.app"
-               BlueprintName = "FlyweighPattern"
-               ReferencedContainer = "container:FlyweighPattern.xcodeproj">
+               BlueprintIdentifier = "F4F6B6D91D8D380B0063A1A3"
+               BuildableName = "FlyweightPattern.app"
+               BlueprintName = "FlyweightPattern"
+               ReferencedContainer = "container:FlyweightPattern.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,30 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F4F6B6AF1D8D34690063A1A3"
-               BuildableName = "FlyweighPatternTests.xctest"
-               BlueprintName = "FlyweighPatternTests"
-               ReferencedContainer = "container:FlyweighPattern.xcodeproj">
+               BlueprintIdentifier = "F4F6B6EC1D8D380B0063A1A3"
+               BuildableName = "FlyweightPatternTests.xctest"
+               BlueprintName = "FlyweightPatternTests"
+               ReferencedContainer = "container:FlyweightPattern.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F4F6B6BA1D8D346A0063A1A3"
-               BuildableName = "FlyweighPatternUITests.xctest"
-               BlueprintName = "FlyweighPatternUITests"
-               ReferencedContainer = "container:FlyweighPattern.xcodeproj">
+               BlueprintIdentifier = "F4F6B6F71D8D380B0063A1A3"
+               BuildableName = "FlyweightPatternUITests.xctest"
+               BlueprintName = "FlyweightPatternUITests"
+               ReferencedContainer = "container:FlyweightPattern.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F4F6B6971D8D34690063A1A3"
-            BuildableName = "FlyweighPattern.app"
-            BlueprintName = "FlyweighPattern"
-            ReferencedContainer = "container:FlyweighPattern.xcodeproj">
+            BlueprintIdentifier = "F4F6B6D91D8D380B0063A1A3"
+            BuildableName = "FlyweightPattern.app"
+            BlueprintName = "FlyweightPattern"
+            ReferencedContainer = "container:FlyweightPattern.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -75,10 +75,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F4F6B6971D8D34690063A1A3"
-            BuildableName = "FlyweighPattern.app"
-            BlueprintName = "FlyweighPattern"
-            ReferencedContainer = "container:FlyweighPattern.xcodeproj">
+            BlueprintIdentifier = "F4F6B6D91D8D380B0063A1A3"
+            BuildableName = "FlyweightPattern.app"
+            BlueprintName = "FlyweightPattern"
+            ReferencedContainer = "container:FlyweightPattern.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -94,10 +94,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F4F6B6971D8D34690063A1A3"
-            BuildableName = "FlyweighPattern.app"
-            BlueprintName = "FlyweighPattern"
-            ReferencedContainer = "container:FlyweighPattern.xcodeproj">
+            BlueprintIdentifier = "F4F6B6D91D8D380B0063A1A3"
+            BuildableName = "FlyweightPattern.app"
+            BlueprintName = "FlyweightPattern"
+            ReferencedContainer = "container:FlyweightPattern.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
