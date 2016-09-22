@@ -69,7 +69,7 @@ public class Trie{
         var current : TrieNode = root
         var wordList : Array<String> = Array<String>()
         
-        printChildRoot(root: root, keyWord:keyWord)
+        //printChildRoot(root: root, keyWord:keyWord)
     
         while keyWord.characters.count != current.level{
             var childToUse : TrieNode!
@@ -94,6 +94,7 @@ public class Trie{
         }
     
         for child in current.children{
+            print(child.key)
             if child.isFinal == true{
                 wordList.append(child.key)
             }
@@ -110,6 +111,33 @@ public class Trie{
             printChildRoot(root: child, keyWord: keyWord)
         }
     }
+    
+    func printChildRoot(keyWord: String){
+        for child in root.children{
+            if child.key.characters.count >= keyWord.characters.count && child.isFinal{
+                print(child.key)
+            }
+            printChildRoot(root: child, keyWord: keyWord)
+        }
+    }
+    
+    func findNode(keyWord:String) -> TrieNode?{
+        print("Find Node")
+        for child in root.children{
+            
+            print(child.key)
+//            if(child.key == keyWord){
+//                print(child.key)
+//                return child
+//            }
+            
+            findNode(keyWord: keyWord)
+            
+        }
+        
+        return nil
+    }
+    
 }
 
 
@@ -119,11 +147,14 @@ trie.addWord(keyword: "Balls")
 trie.addWord(keyword: "Ballard")
 trie.addWord(keyword: "Bat")
 trie.addWord(keyword: "Bar")
-//trie.addWord(keyword: "Bad")
-//trie.addWord(keyword: "Cat")
+trie.addWord(keyword: "Bad")
 
 
-let wordList: Array<String>! = trie.findWord(keyWord: "Bal")
+//let wordList: Array<String>! = trie.findWord(keyWord: "Ba")
+
+//trie.printChildRoot(keyWord: "Bal")
+let trieNode = trie.findNode(keyWord: "Ba")
+print(trieNode?.key)
 
 
 
