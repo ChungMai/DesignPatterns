@@ -137,9 +137,7 @@ public class Trie{
         
         return nil
     }
-    
 }
-
 
 let trie = Trie()
 trie.addWord(keyword: "Ball")
@@ -150,11 +148,11 @@ trie.addWord(keyword: "Bar")
 trie.addWord(keyword: "Bad")
 
 
-//let wordList: Array<String>! = trie.findWord(keyWord: "Ba")
+let wordList: Array<String>! = trie.findWord(keyWord: "Ba")
 
 //trie.printChildRoot(keyWord: "Bal")
-let trieNode = trie.findNode(keyWord: "Ba")
-print(trieNode?.key)
+//let trieNode = trie.findNode(keyWord: "Ba")
+//print(trieNode?.key)
 
 
 
